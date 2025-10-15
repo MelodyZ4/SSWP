@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx'
 import './App.css';
@@ -7,14 +7,20 @@ import WIP from './WIP.jsx';
 import Contact from './Contact.jsx';
 
 function App() {
-  const page = window.location.pathname;
+  const [hash, setHash] = useState(window.location.hash.replace('#', ''));
+
+  useEffect(() => {
+    const onHashChange = () => setHash(window.location.hash.replace('#', ''));
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
 
   let Component;
-  if (page === '/home') {
+  if (hash === '/home') {
     Component = Home;
-  } else if (page === '/wip') {
+  } else if (hash === '/wip') {
     Component = WIP;
-  } else if (page === '/contact') {
+  } else if (hash === '/contact') {
     Component = Contact;
   } else {
     Component = Home;

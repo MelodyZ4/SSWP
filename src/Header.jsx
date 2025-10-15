@@ -25,15 +25,28 @@ function Header() {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', marginLeft: '5vw', }}>
-            <img
-              src={logo}
-              alt="SSWP Logo"
+            <button
+              onClick={() => window.location.href = '#/home'}
               style={{
-                width: '12vw',
-                objectFit: 'contain',
-                marginRight: '2.5vw',
+                background: 'none',
+                border: 'none',
+                padding: 0,
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
               }}
-            />
+              aria-label="Go to Home"
+            >
+              <img
+                src={logo}
+                alt="SSWP Logo"
+                style={{
+                  width: '12vw',
+                  objectFit: 'contain',
+                  marginRight: '2.5vw',
+                }}
+              />
+            </button>
             <div
               style={{
                 color: '#7B00CC',
@@ -99,7 +112,7 @@ function Header() {
               cursor: 'pointer',
               fontFamily: "'EB Garamond', serif",
             }}
-            onClick={() => window.location.href = '/home'}
+            onClick={() => window.location.href = '#/home'}
           >
             Home
           </button>
@@ -114,7 +127,7 @@ function Header() {
               cursor: 'pointer',
               fontFamily: "'EB Garamond', serif",
             }}
-            onClick={() => window.location.href = '/wip'}
+            onClick={() => window.location.href = '#/wip'}
           >
             Works In Progress
           </button>
@@ -129,7 +142,7 @@ function Header() {
               cursor: 'pointer',
               fontFamily: "'EB Garamond', serif",
             }}
-            onClick={() => window.location.href = '/contact'}
+            onClick={() => window.location.href = '#/contact'}
           >
             Contact
           </button>
