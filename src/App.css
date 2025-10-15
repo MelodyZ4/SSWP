@@ -1,0 +1,51 @@
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #7B00CC;
+  font-family: 'Questrial', sans-serif;
+  opacity: 1;
+}
+
+input,
+textarea {
+  padding-left: 1em;
+  padding-right: 1em;
+  font-family: 'Questrial', sans-serif;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.message-area {
+  padding-top: 1em;
+  box-sizing: border-box;
+  resize: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #FEFFF2;
+}
