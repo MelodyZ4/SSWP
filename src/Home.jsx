@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Slider from "react-slick";
 import cat1 from './assets/cat1.jpg';
 import cat2 from './assets/cat2.jpeg';
@@ -61,10 +61,19 @@ function PrevArrow(props) {
 
 const Home = () => {
   const [stacked, setStacked] = useState(false);
+  const topRectangleRef = useRef(null);
 
   useEffect(() => {
     function handleResize() {
-      setStacked((window.innerWidth < 1.5 * window.innerHeight) || window.innerWidth < 900);
+      let shouldStack = (window.innerWidth < 1.5 * window.innerHeight) || window.innerWidth < 900;
+
+      if (topRectangleRef.current) {
+        const el = topRectangleRef.current;
+        if (el.scrollHeight > el.clientHeight || el.scrollWidth > el.clientWidth) {
+          shouldStack = true;
+        }
+      }
+      setStacked(shouldStack);
     }
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -130,6 +139,7 @@ const Home = () => {
     justifyContent: 'center',
     paddingTop: '3vh',
     paddingBottom: '1.5vh',
+    overflow: 'hidden',
   };
 
   const topImage = {
@@ -146,7 +156,7 @@ const Home = () => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minHeight: '100vh'}}>
       <div style={topSectionContainer}>
-        <div style={topRectangle}>
+        <div style={topRectangle} ref={topRectangleRef}>
           <div
             style={{
               color: '#092F37',
