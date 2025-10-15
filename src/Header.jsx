@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './assets/sswp_logo.svg';
 import insta from './assets/insta_logo.svg';
 
 function Header() {
@@ -38,7 +37,7 @@ function Header() {
               aria-label="Go to Home"
             >
               <img
-                src={logo}
+                src="/sswp_logo.svg"
                 alt="SSWP Logo"
                 style={{
                   width: '12vw',
