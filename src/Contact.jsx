@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 
 const emailRegex = new RegExp(
@@ -14,8 +14,16 @@ function Contact() {
   const [emailTouched, setEmailTouched] = useState(false);
   const [messageTouched, setMessageTouched] = useState(false);
   const [feedback, setFeedback] = useState({ text: '', type: '' });
+  const [isMobile, setIsMobile] = useState(false);
 
   const formRef = useRef(null);
+
+  useEffect(() => {
+    function handleResize() { setIsMobile(window.innerWidth <= 1248); }
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -59,7 +67,7 @@ function Contact() {
   return (
     <div
       style={{
-        minHeight: '100vh',
+        minHeight: isMobile ? '150vh' : '100vh',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -75,7 +83,7 @@ function Contact() {
         target="hidden_iframe"
         onSubmit={handleSubmit}
         style={{
-          width: '35vw',
+          width: isMobile ? '90vw' : '35vw',
           display: 'flex',
           flexDirection: 'column',
           height: '70vh',
@@ -87,7 +95,7 @@ function Contact() {
           placeholder="Name"
           onChange={(e) => setName(e.target.value)}
           onBlur={() => setNameTouched(true)}
-          style={{ width: '100%', height: '4vh', marginTop: '8vh',
+          style={{ width: '100%', height: isMobile ? '6vh' : '4vh', marginTop: '8vh',
             outline: nameTouched && !name.trim() ? '1px solid red' : 'none',
            }}
         />
@@ -97,7 +105,7 @@ function Contact() {
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
           onBlur={() => setEmailTouched(true)}
-          style={{ width: '100%', height: '4vh', marginTop: '2.5vh', fontFamily: 'Questrial, sans-serif',
+          style={{ width: '100%', height: isMobile ? '6vh' : '4vh', marginTop: isMobile ? '3vh' : '2.5vh', fontFamily: 'Questrial, sans-serif',
             outline: emailTouched && !email.trim() ? '1px solid red' : 'none',
            }}
         />
@@ -111,7 +119,7 @@ It all starts here...`}
           cols="50"
           onChange={(e) => setMessage(e.target.value)}
           onBlur={() => setMessageTouched(true)}
-          style={{ width: '100%', height: '20vh', marginTop: '2.5vh',
+          style={{ width: '100%', height: isMobile ? '30vh' : '20vh', marginTop: isMobile ? '3vh' : '2.5vh',
             outline: messageTouched && !message.trim() ? '1px solid red' : 'none',
            }}
         />
@@ -121,9 +129,9 @@ It all starts here...`}
           style={{
             backgroundColor: '#7B00CC',
             color: '#FFD966',
-            width: '8.5vw',
-            height: '2.3vw',
-            marginTop: '2.5vh',
+            width: isMobile ? '30vw' : '8.5vw',
+            height: isMobile ? '6vh' : '2.3vw',
+            marginTop: isMobile ? '3vh' : '2.5vh',
             fontFamily: 'Questrial, sans-serif',
             outline: 'none',
             boxShadow: 'none',
