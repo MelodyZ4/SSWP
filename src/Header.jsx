@@ -15,7 +15,7 @@ function Header() {
     <header
       style={{
         position: 'relative',
-        backgroundColor: isMobile ?  '#3D3C3C' : '#343232',
+        backgroundColor: '#2F2E2E',
         paddingTop: '7vh',
         paddingBottom: isMobile ? 0 : '3vh',
         boxSizing: 'border-box',
@@ -57,7 +57,7 @@ function Header() {
             </button>
             <div
               style={{
-                color: '#7B00CC',
+                color: '#B3ABD2',
                 fontSize: isMobile ? '8vw' : '3.5vw',
                 maxWidth: '400px',
                 minWidth: '180px',
