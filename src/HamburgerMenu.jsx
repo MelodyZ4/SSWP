@@ -4,10 +4,9 @@ const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  // Anchor the button within the header layout (not fixed)
   const hamburgerStyle = {
     position: 'relative',
-    zIndex: 1001, // keep the icon above the panel/overlay
+    zIndex: 1001,
     background: 'none',
     border: 'none',
     cursor: 'pointer',
@@ -62,7 +61,7 @@ const HamburgerMenu = () => {
     backgroundColor: '#B3ABD2',
     transform: isOpen ? 'translateX(0)' : 'translateX(100%)',
     transition: 'transform 0.3s ease',
-    zIndex: 1000, // below the button
+    zIndex: 1000,
     display: 'flex',
     flexDirection: 'column',
     padding: '80px 30px 30px 30px',
@@ -72,7 +71,7 @@ const HamburgerMenu = () => {
   };
 
   const overlayStyle = {
-    position: 'fixed', // changed from absolute
+    position: 'fixed',
     top: 0,
     left: 0,
     width: '100vw',
