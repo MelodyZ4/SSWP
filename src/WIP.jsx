@@ -19,7 +19,7 @@ function WIP() {
         flex: 1,
       }}
     >
-      <h1 style={{ fontFamily: 'Jockey One, sans-serif' }}>This page is still under construction. Check back soon!</h1>
+      <h1 style={{ fontFamily: 'Jockey One, sans-serif', color: '#092F37' }}>This page is still under construction. Check back soon!</h1>
     </div>
   );
 }

@@ -95,7 +95,7 @@ function Contact() {
           placeholder="Name"
           onChange={(e) => setName(e.target.value)}
           onBlur={() => setNameTouched(true)}
-          style={{ width: '100%', height: isMobile ? '6vh' : '4vh', marginTop: '8vh',
+          style={{ backgroundColor: '#FFFFFF', width: '100%', border: '1px solid #000000', height: isMobile ? '6vh' : '4vh', marginTop: '8vh',
             outline: nameTouched && !name.trim() ? '1px solid red' : 'none',
            }}
         />
@@ -105,7 +105,7 @@ function Contact() {
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
           onBlur={() => setEmailTouched(true)}
-          style={{ width: '100%', height: isMobile ? '6vh' : '4vh', marginTop: isMobile ? '3vh' : '2.5vh', fontFamily: 'Questrial, sans-serif',
+          style={{ backgroundColor: '#FFFFFF', width: '100%', border: '1px solid #000000', height: isMobile ? '6vh' : '4vh', marginTop: isMobile ? '3vh' : '2.5vh', fontFamily: 'Questrial, sans-serif',
             outline: emailTouched && !email.trim() ? '1px solid red' : 'none',
            }}
         />
@@ -119,7 +119,7 @@ It all starts here...`}
           cols="50"
           onChange={(e) => setMessage(e.target.value)}
           onBlur={() => setMessageTouched(true)}
-          style={{ width: '100%', height: isMobile ? '30vh' : '20vh', marginTop: isMobile ? '3vh' : '2.5vh',
+          style={{ backgroundColor: '#FFFFFF', width: '100%', border: '1px solid #000000',height: isMobile ? '30vh' : '20vh', marginTop: isMobile ? '3vh' : '2.5vh',
             outline: messageTouched && !message.trim() ? '1px solid red' : 'none',
            }}
         />

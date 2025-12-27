@@ -15,7 +15,7 @@ function Header() {
     <header
       style={{
         position: 'relative',
-        backgroundColor: '#2F2E2E',
+        backgroundColor: isMobile ?  '#3D3C3C' : '#343232',
         paddingTop: '7vh',
         paddingBottom: isMobile ? 0 : '3vh',
         boxSizing: 'border-box',
