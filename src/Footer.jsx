@@ -8,11 +8,15 @@ function Footer() {
       display: 'flex',
       justifyContent: 'center',
       width: '100%',
-      background: 'linear-gradient(to bottom, rgba(255, 217, 102, 0.75), rgba(255, 217, 102, 0.3))'
+      background: '#FFD966'
     }}
   > 
-    <div>
-        <p>© {year} Specimen SandWitch Press</p>
+    <div
+      style={{
+        color: '#4D0080'
+      }}
+    >
+      <p>© {year} Specimen SandWitch Press</p>
     </div>
   </footer>
   )
