@@ -18,8 +18,8 @@ const HamburgerMenu = () => {
 
   const iconBox = {
     position: 'relative',
-    width: '4.5vh',
-    height: '4.5vh',
+    width: 'max(40px,4.5vh)',
+    height: 'max(40px,4.5vh)',
     borderRadius: '20%',
     backgroundColor: isOpen ? 'transparent' : '#FFD966',
   };
