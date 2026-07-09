@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import cauldron from './assets/cauldron_poem.png';
 
 function WIP() {
