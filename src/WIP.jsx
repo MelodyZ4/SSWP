@@ -1,18 +1,9 @@
 import React from 'react';
+import cauldron from './assets/cauldron_poem.png';
 
 function WIP() {
   return (
-     <div
-      style={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        textAlign: 'center',
-        marginTop: '5vh',
-      }}
-    >
-      <h1 style={{ flex: 1, fontFamily: 'Jockey One, sans-serif' }}>This page is still under construction. Check back soon!</h1>
-    </div>
+      <img src={cauldron} alt="Cauldron Poem" style={{ maxWidth: '100%', height: 'auto', margin: '0 auto' }} />
   );
 }
 
