@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import cauldron from './assets/cauldron_poem.png';
 
 function WIP() {
   const [isMobile, setIsMobile] = useState(false);
@@ -9,18 +10,7 @@ function WIP() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-     <div
-      style={{
-        minHeight: isMobile ? '150vh' :'100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        textAlign: 'center',
-        marginTop: '5vh',
-        flex: 1,
-      }}
-    >
-      <h1 style={{ fontFamily: 'Jockey One, sans-serif', color: '#092F37' }}>This page is still under construction. Check back soon!</h1>
-    </div>
+      <img src={cauldron} alt="A drawing of a cauldron with the poem: Slip of the narrows rabbit. treads from footprints. ferns & stale bread to sleep where Darkness makes its bed." style={{ maxWidth: '100%', height: 'auto', margin: '0 auto' }} />
   );
 }
 
