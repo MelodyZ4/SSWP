@@ -26,13 +26,17 @@ function App() {
     Component = Home;
   }
   return (
-    <>
+    <div style={{ 
+      minHeight: '100vh', 
+      display: 'flex', 
+      flexDirection: 'column' 
+    }}>
       <Header />
-      <main>
+      <main style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
         <Component />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

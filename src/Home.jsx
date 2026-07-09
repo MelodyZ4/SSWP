@@ -61,11 +61,15 @@ function PrevArrow(props) {
 
 const Home = () => {
   const [stacked, setStacked] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const topRectangleRef = useRef(null);
 
   useEffect(() => {
     function handleResize() {
-      let shouldStack = (window.innerWidth < 1.5 * window.innerHeight) || window.innerWidth < 900;
+      const mobile = window.innerWidth <= 1248;
+      setIsMobile(mobile);
+      
+      let shouldStack = mobile || (window.innerWidth < 1.5 * window.innerHeight) || window.innerWidth < 900;
 
       if (topRectangleRef.current) {
         const el = topRectangleRef.current;
@@ -96,7 +100,7 @@ const Home = () => {
   };
 
   const rectangleStyle = {
-    width: '60%',
+    width: isMobile ? '90%' : '60%',
     boxSizing: 'border-box',
     backgroundColor: '#B3ABD2',
     margin: '0 auto',
@@ -113,7 +117,7 @@ const Home = () => {
   };
 
   const topSectionContainer = {
-    width: '60%',
+    width: isMobile ? '90%' : '60%',
     display: 'flex',
     alignItems: 'stretch',
     margin: '0 auto',
